@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Employee Payroll Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Employee Payroll Management System</h1>
+    <p>Net Salary = Basic Salary + Allowance (20%) − Deduction (10%)</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Add Employee</h2>
+      <div class="form-row">
+        <label>Employee ID
+          <input id="empId" type="number" placeholder="e.g. 101">
+          <span class="error" id="idError"></span>
+        </label>
+        <label>Employee Name
+          <input id="empName" type="text" placeholder="e.g. Ananya">
+          <span class="error" id="nameError"></span>
+        </label>
+        <label>Basic Salary (₹)
+          <input id="empSalary" type="number" placeholder="e.g. 20000">
+          <span class="error" id="salaryError"></span>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="addBtn">Add Employee</button>
+        <button id="calcBtn" class="secondary">2. Calculate Payroll</button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>Employees</span><strong id="statCount">0</strong></div>
+      <div class="stat"><span>Total Basic</span><strong id="statBasic">₹0.00</strong></div>
+      <div class="stat"><span>Total Net Payout</span><strong id="statNet">₹0.00</strong></div>
+    </section>
+
+    <section class="card">
+      <h2>3. Employee Payroll</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Basic Salary</th>
+              <th>Allowance (20%)</th><th>Deduction (10%)</th><th>Net Salary</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
